@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ImageList from './components/image_list';
-
+import ElevioHelpButtonComponent from './components/button_component';
 //create a component
 class App extends Component {
   constructor(props) {
@@ -29,7 +29,8 @@ class App extends Component {
     console.log(this.state.images);
     return(
       <div>
-        <ImageList images={this.state.images}/>
+        {/* <ImageList images={this.state.images}/> */}
+        <ElevioHelpButtonComponent />
       </div>
     );
   }
@@ -39,4 +40,5 @@ class App extends Component {
 Meteor.startup(() => {
   //Meteor.startup waits for the DOM to load before executing
   ReactDOM.render(<App />, document.querySelector('.container'));
+  //This line applies the render to the .container div specified on main.html
 });
